@@ -1,12 +1,14 @@
 import React from 'react';
 import Wrapper from '../../hoc/Wrapper';
 import classes from './Layout.module.scss';
+import Toolbar from '../Navigation/Toolbar/Toolbar';
 
 export default function Layout(props) {
     return (
-        <Wrapper className={classes.Content}>
-            <div>Toolbar, SideDrawer, Backdrop</div>
-            <main>
+        <Wrapper>
+            <Toolbar />
+
+            <main className={classes.Content}>
                 {props.children}
             </main>
         </Wrapper>
