@@ -5,7 +5,7 @@ import classes from './Logo.module.scss';
 function Logo(props) {
     return (
         <div className={classes.Logo}>
-            <img src={burgerLogo} alt="My Burger" />
+            <img src={burgerLogo} alt="My Burger" style={{ height: props.height }} />
         </div>
     );
 }
