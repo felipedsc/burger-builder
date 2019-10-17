@@ -5,8 +5,8 @@ import classes from './NavigationItems.module.scss';
 export default function NavigationItems(props) {
     return (
         <ul className={classes.NavigationItems}>
-            <NavigationItem link="/" active>Burger Builder</NavigationItem>
-            <NavigationItem link="/checkout">Checkout</NavigationItem>
+            <NavigationItem link="/" exact={true}>Burger Builder</NavigationItem>
+            <NavigationItem link="/orders">Orders</NavigationItem>
         </ul>
     );
 }
