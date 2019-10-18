@@ -28,7 +28,7 @@ export default class Layout extends Component {
                 <main className={classes.Content}>
                     {this.props.children}
                 </main>
-            </Wrapper >
+            </Wrapper>
         );
     }
 }
