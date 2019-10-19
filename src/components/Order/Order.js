@@ -21,7 +21,7 @@ const order = (props) => {
                 border: '1px solid #ccc',
                 padding: '5px'
             }}
-        >{ingredient.name} (ingredient.amount)</span>)
+        >{ingredient.name} {ingredient.amount}</span>)
     })
     return (
         <div className={classes.Order} >
