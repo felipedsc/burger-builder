@@ -29,7 +29,7 @@ export default function BuildControls(props) {
                 className={classes.OrderButton}
                 onClick={props.ordered}
             >
-                ORDER NOW
+                {props.isAuth ? 'ORDER NOW' : 'SIGN UP TO ORDER'}
             </button>
         </div>
     )
