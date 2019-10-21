@@ -4,6 +4,7 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.module.scss';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 import Wrapper from '../../../hoc/Wrapper/Wrapper';
+import {connect} from 'react-redux';
 
 const SideDrawer = (props) => {
     let attachedClasses = [classes.SideDrawer, classes.Close];
@@ -16,17 +17,21 @@ const SideDrawer = (props) => {
         <Wrapper>
             <Backdrop show={props.open} clicked={props.closed} />
 
-            <div className={attachedClasses.join(' ')}>
+            <div className={attachedClasses.join(' ')} onClick={props.closed}>
                 <div className={classes.Logo}>
                     <Logo />
                 </div>
 
                 <nav>
-                    <NavigationItems />
+                    <NavigationItems isAuthenticated={props.isAuth} />
                 </nav>
             </div>
         </Wrapper>
     )
 }
 
-export default SideDrawer
+const mapStateToProps = state => ({
+  isAuth: state.auth.token !== null
+});
+
+export default connect(mapStateToProps)(SideDrawer);
